@@ -46,6 +46,7 @@ public struct SheetOptions {
     public var maxWidth: CGFloat?
 
     public var isRubberBandEnabled: Bool = false
+    public var contentBgColor: UIColor = .clear
     
     /// Experimental flag that attempts to shrink the nested presentations more each time a new sheet is presented. This must be set before any sheet is presented.
     public static var shrinkingNestedPresentingViewControllers = false
@@ -61,7 +62,8 @@ public struct SheetOptions {
                 horizontalPadding: CGFloat? = nil,
                 bottomPadding: CGFloat? = nil,
                 maxWidth: CGFloat? = nil,
-                isRubberBandEnabled: Bool? = nil) {
+                isRubberBandEnabled: Bool? = nil,
+                contentBgColor: UIColor? = nil) {
         let defaultOptions = SheetOptions.default
         self.pullBarHeight = pullBarHeight ?? defaultOptions.pullBarHeight
         self.presentingViewCornerRadius = presentingViewCornerRadius ?? defaultOptions.presentingViewCornerRadius
@@ -75,6 +77,7 @@ public struct SheetOptions {
         let maxWidth = maxWidth ?? defaultOptions.maxWidth
         self.maxWidth = maxWidth == 0 ? nil : maxWidth
         self.isRubberBandEnabled = isRubberBandEnabled ?? false
+        self.contentBgColor = contentBgColor ?? defaultOptions.contentBgColor
     }
     
     @available(*, unavailable, message: "cornerRadius, minimumSpaceAbovePullBar, gripSize and gripColor are now properties on SheetViewController. Use them instead.")

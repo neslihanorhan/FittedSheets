@@ -178,9 +178,9 @@ public class SheetViewController: UIViewController {
         let options = options ?? SheetOptions.default
         self.contentViewController = SheetContentViewController(childViewController: controller, options: options)
         if #available(iOS 13.0, *) {
-            // self.contentViewController.contentBackgroundColor = UIColor.systemBackground
+            self.contentViewController.contentBackgroundColor = options.contentBgColor
         } else {
-            // self.contentViewController.contentBackgroundColor = UIColor.white
+             self.contentViewController.contentBackgroundColor = options.contentBgColor
         }
         self.sizes = sizes.count > 0 ? sizes : [.intrinsic]
         self.options = options
@@ -354,7 +354,7 @@ public class SheetViewController: UIViewController {
             
             $0.top.pinToSuperview(inset: top, relation: .greaterThanOrEqual).priority = UILayoutPriority(999)
             
-            $0.bottom.pinToSuperview(inset: self.options.bottomPadding, relation: .lessThanOrEqual).priority = .required
+            $0.bottom.pinToSuperview(inset: 0, relation: .lessThanOrEqual).priority = .required
         }
     }
     
