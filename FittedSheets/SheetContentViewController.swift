@@ -263,7 +263,7 @@ public class SheetContentViewController: UIViewController {
             }
             view.left.pinToSuperview()
             view.right.pinToSuperview()
-            view.bottom.pinToSuperview()
+            view.bottom.pinToSuperview(inset: 40, relation: .lessThanOrEqual).priority = .required
         }
     }
     
