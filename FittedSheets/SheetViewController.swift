@@ -178,9 +178,9 @@ public class SheetViewController: UIViewController {
         let options = options ?? SheetOptions.default
         self.contentViewController = SheetContentViewController(childViewController: controller, options: options)
         if #available(iOS 13.0, *) {
-            self.contentViewController.contentBackgroundColor = UIColor.systemBackground
+            // self.contentViewController.contentBackgroundColor = UIColor.systemBackground
         } else {
-            self.contentViewController.contentBackgroundColor = UIColor.white
+            // self.contentViewController.contentBackgroundColor = UIColor.white
         }
         self.sizes = sizes.count > 0 ? sizes : [.intrinsic]
         self.options = options
