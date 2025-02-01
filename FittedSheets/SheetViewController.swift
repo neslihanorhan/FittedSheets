@@ -351,7 +351,7 @@ public class SheetViewController: UIViewController {
             } else {
                 top = max(12, UIApplication.shared.windows.first(where:  { $0.isKeyWindow })?.compatibleSafeAreaInsets.top ?? 12)
             }
-            $0.bottom.pinToSuperview(inset: 40, relation: .equal)
+            $0.bottom.pinToSuperview(inset: self.options.bottomPadding, relation: .equal)
             $0.top.pinToSuperview(inset: top, relation: .greaterThanOrEqual).priority = UILayoutPriority(999)
         }
     }

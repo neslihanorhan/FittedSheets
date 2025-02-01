@@ -42,6 +42,7 @@ public struct SheetOptions {
     public var useInlineMode = false
     
     public var horizontalPadding: CGFloat = 0
+    public var bottomPadding: CGFloat = 0
     public var maxWidth: CGFloat?
 
     public var isRubberBandEnabled: Bool = false
@@ -58,6 +59,7 @@ public struct SheetOptions {
                 shrinkPresentingViewController: Bool? = nil,
                 useInlineMode: Bool? = nil,
                 horizontalPadding: CGFloat? = nil,
+                bottomPadding: CGFloat? = nil,
                 maxWidth: CGFloat? = nil,
                 isRubberBandEnabled: Bool? = nil) {
         let defaultOptions = SheetOptions.default
@@ -69,6 +71,7 @@ public struct SheetOptions {
         self.shrinkPresentingViewController = shrinkPresentingViewController ?? defaultOptions.shrinkPresentingViewController
         self.useInlineMode = useInlineMode ?? defaultOptions.useInlineMode
         self.horizontalPadding = horizontalPadding ?? defaultOptions.horizontalPadding
+        self.bottomPadding = bottomPadding ?? defaultOptions.bottomPadding
         let maxWidth = maxWidth ?? defaultOptions.maxWidth
         self.maxWidth = maxWidth == 0 ? nil : maxWidth
         self.isRubberBandEnabled = isRubberBandEnabled ?? false
