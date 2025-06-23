@@ -247,7 +247,7 @@ public class SheetContentViewController: UIViewController {
         self.contentView.addSubview(overflowView) {
             $0.edges(.left, .right).pinToSuperview()
             $0.height.set(200)
-            $0.top.align(with: self.contentView.al.bottom - 1)
+            $0.top.align(with: self.contentView.al.bottom + 1)
         }
     }
     
